@@ -22,9 +22,29 @@ bottom.addEventListener('mouseenter', mouseOver);
 bottom.addEventListener('mouseleave', mouseGone); 
 
 // Change the font size of the paragraphs in the main element when the user clicks them
-
+const textSize = document.querySelector('main');
+let clickReduce = () => textSize.style.fontSize = '5px'; 
+textSize.addEventListener('click', clickReduce); 
 // Change the text in the footer when the user clicks it
+const footerText = document.querySelector('footer p');
+const clickChange = () => footerText.innerText = "i make change";
+footerText.addEventListener('click', clickChange); 
+
 // Remove the h1 element in the header
+var headerLogo = document.querySelector('header h1'); 
+headerLogo.remove(); 
+
 // Put something in the place of the h1 in the header
+const newHeader = document.querySelector('header'), 
+newLogo = document.createElement('h2');
+newLogo.innerText = 'LOGO';
+newHeader.prepend(newLogo); 
+
 // Change the text in one of the paragraph tags in the main element
+const mainParagraphs = document.querySelectorAll('main p'); 
+mainParagraphs[2].innerText = 'CHANGED FOR THE BETTER';
+mainParagraphs[2].style.backgroundColor = 'blanchedalmond'; 
+
 // Change the size of the header element to 200px using grid syntax
+const headerContainer = document.querySelector('.container');
+headerContainer.style.gridTemplateRows = '200px auto 125px';
